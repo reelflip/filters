@@ -1,7 +1,6 @@
-# Simple-web-image-editor
-A simple image editor web app build with jquery and HTML5 Canvas
+# ReelFlip Image editor
+A simple image editor with jquery and HTML5 Canvas
 
-[Live demo here](https://craciuncezar.github.io/Simple-web-image-editor/)
 
 ## ABOUT
 
