@@ -332,16 +332,10 @@ $(function () {
         var context = canvas.getContext("2d");
         let imageData = context.getImageData(0, 0, context.canvas.width, context.canvas.height);
         let pixels = imageData.data;
-        imageData = convolute( image,
-            [0, -1, 0,
-                -1, 5, -1,
-                0, -1, 0],
-            0
-        );
-
-        for (let i = 0; i < pixels.length; i += 4)
-            pixels[i] = pixels[i + 1] = pixels[i + 2] = Math.round((pixels[i] + pixels[i + 1] + pixels[i + 2]) / 3);
-        context.putImageData(imageData, 0, 0);
+         imageData1 = Filters.sobel(imageData);
+         imageData1 =  Filters.grayscale(imageData1);
+         imageData1 =  Filters.invert(imageData1)
+        context.putImageData(imageData1, 0, 0);
     })
 
     $("#threshold").click((event)=>{
